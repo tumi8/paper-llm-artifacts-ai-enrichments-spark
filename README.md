@@ -1,6 +1,6 @@
 # Artifact: AI-Enrichment Runs of NVIDIA DGX Spark
 
-This repository contains the evaluation artifacts of the enrichment runs using the NVIDIA DGX Spark.
+This repository contains the evaluation artifacts of the enrichment runs on the NVIDIA DGX Spark.
 
 Browse the artifact:
 
