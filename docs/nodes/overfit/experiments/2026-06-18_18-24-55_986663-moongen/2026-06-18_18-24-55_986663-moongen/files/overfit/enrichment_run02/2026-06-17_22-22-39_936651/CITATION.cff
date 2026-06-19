@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Layer 2 Latency and Energy Measurement under Variable Traffic Loads
+abstract: This dataset captures latency and energy consumption metrics for Layer 2
+  packet forwarding under varying packet rates and sizes. The experiment uses synchronized
+  traffic generation via MoonGen and controlled forwarding tests on two nodes, with
+  configurations ensuring deterministic hardware behavior. Six runs per workload configuration
+  measure latency histograms, energy usage, and transmission performance. Archive
+  contents include setup scripts, per-run logs, and evaluation outputs for analyzing
+  traffic impact on network device efficiency.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- Layer2
+- latency
+- energy consumption
+- pkt_rate
+license: CC-BY-SA-4.0

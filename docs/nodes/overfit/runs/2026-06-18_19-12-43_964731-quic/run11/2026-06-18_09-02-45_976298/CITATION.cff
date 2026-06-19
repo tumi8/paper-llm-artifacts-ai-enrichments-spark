@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Cross‑Implementation QUIC File Transfer Performance Dataset with Energy and
+  Throughput Measurements
+abstract: This dataset captures the results of coordinated client‑server file transfer
+  experiments using multiple QUIC protocol implementations across two test nodes.
+  For each run, a TLS‑enabled QUIC server delivered a payload of varying size under
+  configurable bandwidth limits while recording energy consumption; the corresponding
+  client measured start/end timestamps, verified checksums, and logged execution details.
+  Aggregated logs were processed to compute elapsed time, goodput, success rates,
+  and statistical summaries across implementation, bandwidth, file size, and repetition
+  dimensions, with visualizations and JSON/TSV result files provided.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC
+- goodput
+- Rust
+- bandwidth
+- lsquic
+license: CC-BY-SA-4.0

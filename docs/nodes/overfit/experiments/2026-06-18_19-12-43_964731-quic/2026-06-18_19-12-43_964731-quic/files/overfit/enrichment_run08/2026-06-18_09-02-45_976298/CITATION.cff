@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Protocol Performance Evaluation Across Implementations and Bandwidth Conditions
+abstract: This dataset captures performance metrics of multiple QUIC protocol implementations
+  under varying bandwidth constraints. The experiment measures transfer reliability,
+  energy consumption, latency, and cryptographic handshake efficiency through synchronized
+  client-server workflows. Repeated trials with different configurations generate
+  logs, checksums, and timing data for statistical analysis. Evaluation scripts aggregate
+  results to compare goodput, transfer time, and success rates, producing visualizations
+  and TSV files for implementation comparison.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC protocol
+- network configuration
+- bandwidth measurement
+- Python analysis
+- performance evaluation
+license: CC-BY-SA-4.0

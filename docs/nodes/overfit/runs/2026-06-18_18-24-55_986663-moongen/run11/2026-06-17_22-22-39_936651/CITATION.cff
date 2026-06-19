@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Energy Consumption and Per‑Packet Latency Measurements for Configurable Load‑Generator
+  and L2 Forwarding Experiments
+abstract: The dataset captures synchronized experiments in which a MoonGen load‑generator
+  drives a libmoon network device under test with varying packet rates and sizes,
+  while a separate layer‑2 forwarding workload runs on the same DUT. For each of six
+  looped runs per configuration, per‑packet latency is recorded to CSV, filtered histograms
+  are produced, and total energy consumption of the DUT is logged. The results include
+  raw latency traces, aggregated plots, and energy logs, enabling quantitative analysis
+  of performance–energy trade‑offs across multiple traffic configurations.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- libmoon
+- packet latency
+- energy consumption
+- L2 forwarding
+license: CC-BY-SA-4.0

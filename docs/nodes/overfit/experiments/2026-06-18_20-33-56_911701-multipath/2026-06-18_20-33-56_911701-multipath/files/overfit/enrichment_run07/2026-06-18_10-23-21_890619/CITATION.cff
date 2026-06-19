@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Performance Measurement Experiment with Client, Server, and Proxy Components
+abstract: This dataset documents a network performance measurement experiment involving
+  client, server, and proxy components deployed across three nodes. The methodology
+  involved configuring network interfaces and traffic shaping parameters to simulate
+  controlled network conditions, followed by the execution of client and server applications
+  under varying configurations. Energy consumption was recorded during each run, alongside
+  packet data captured by the proxy. Results were visualized and archived using automated
+  scripts, providing a comprehensive record of experimental setup and outcomes.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- Rust
+- Masque
+- tc
+- IPv6
+- energy
+license: CC-BY-SA-4.0

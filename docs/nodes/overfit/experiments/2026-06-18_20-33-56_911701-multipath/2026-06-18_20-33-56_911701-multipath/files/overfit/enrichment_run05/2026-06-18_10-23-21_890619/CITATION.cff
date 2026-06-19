@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Multi‑path QUIC Performance Dataset with Energy and Traffic‑Shaping Measurements
+abstract: This dataset captures the results of coordinated multi‑node experiments
+  evaluating a QUIC implementation over dual‑path IPv6 topologies. Three hosts (client,
+  proxy, server) were configured with deterministic traffic‑shaping, latency emulation,
+  and configurable congestion‑control algorithms while transmitting predefined binary
+  payloads. For each of ten iterations per configuration, the client, proxy, and server
+  logged throughput, latency, QLOG traces, and process energy consumption. Post‑processing
+  scripts generated visualisations, and all result directories were uploaded for archival,
+  providing a comprehensive resource for reproducible network performance analysis.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- QUIC
+- Masque proxy
+- IPv6
+- congestion‑control
+- energy consumption
+license: CC-BY-SA-4.0

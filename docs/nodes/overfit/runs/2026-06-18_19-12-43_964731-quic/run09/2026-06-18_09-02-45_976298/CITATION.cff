@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Implementations Performance Dataset
+abstract: This dataset contains performance measurements of various QUIC client-server
+  implementations under controlled network conditions. Experiments involved transferring
+  files across different bandwidth limits and file sizes using specific QUIC versions.
+  The methodology included executing compiled binaries with defined parameters for
+  each run, capturing timing metrics during data transfer. Evaluation was performed
+  by comparing logs to compute goodput and success rates, generating visualizations
+  like box plots from JSON summaries.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC_implementations
+- Goodput
+- Success_Rate
+- Bandwidth_Limit
+- File_Transfer
+license: CC-BY-SA-4.0

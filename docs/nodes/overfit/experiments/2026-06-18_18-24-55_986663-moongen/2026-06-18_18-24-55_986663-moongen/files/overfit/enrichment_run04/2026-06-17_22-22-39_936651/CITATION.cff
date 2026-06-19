@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Packet‑Rate and Size Latency with Energy Monitoring
+abstract: The dataset records latency and energy consumption for a network device
+  under test while varying packet rate and size. A libmoon forwarder and MoonGen load
+  generator generate traffic, with synchronized runs across two nodes to capture per‑packet
+  latency histograms and continuous power usage. Results are aggregated into CSV tables
+  and PNG plots, enabling evaluation of throughput‑latency trade‑offs and energy efficiency
+  across multiple configurations.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- libmoon forwarder
+- packet‑latency measurement
+- high‑throughput networking
+- energy monitoring
+license: CC-BY-SA-4.0

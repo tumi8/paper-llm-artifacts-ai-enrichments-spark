@@ -1,0 +1,145 @@
+{
+    "motherboard": {
+        "bios": {
+            "date": "08/06/2025",
+            "vendor": "American Megatrends International, LLC.",
+            "version": "5.36_0ACUM018"
+        },
+        "model": "P4242",
+        "vendor": "NVIDIA",
+        "revision": "A04"
+    },
+    "processor": [
+        {
+            "slot": "CPU",
+            "cores": 20,
+            "model": "GB10 Spark CPU @ 3.9GHz",
+            "vendor": "ARM",
+            "threads": 20,
+            "version": "r0p1",
+            "microcode": "",
+            "virtualized": false,
+            "architecture": "64bit"
+        }
+    ],
+    "memory": {
+        "dimms": [
+            {
+                "slot": "DIMM0",
+                "type": "LPDDR5",
+                "empty": false,
+                "model": null,
+                "serial": null,
+                "vendor": "SK Hynix",
+                "capacity_bytes": 137438953472,
+                "maximum_speed_val": 8533,
+                "capacity_human_val": 128,
+                "maximum_speed_unit": "MT/s",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 8533,
+                "operational_speed_unit": "MT/s"
+            }
+        ],
+        "dimm_slots": 1,
+        "ecc_details": "None",
+        "ecc_support": false,
+        "maximum_capacity_bytes": 137438953472,
+        "installed_capacity_bytes": 137438953472,
+        "maximum_capacity_human_val": 128,
+        "maximum_capacity_human_unit": "GiB",
+        "installed_capacity_human_val": 128,
+        "installed_capacity_human_unit": "GiB",
+        "persistent_memory_bytes": 3298534883328,
+        "persistent_memory_human_val": 3,
+        "persistent_memory_human_unit": "TB"
+    },
+    "storage": [
+        {
+            "model": "SAMSUNG MZALC4T0HBL1-00B07",
+            "vendor": "Samsung Electronics Co Ltd",
+            "serial": "S8C2NG0Y839321",
+            "version": "NXHB202Q",
+            "bus_address": "pci@0004:01:00.0",
+            "logical_name": "/dev/nvme0n1",
+            "type": "NVMe",
+            "size_bytes": 4096805658624,
+            "size_human_val": 3815,
+            "size_human_unit": "GiB"
+        }
+    ],
+    "graphics": [
+        {
+            "model": "GB10",
+            "vendor": "NVIDIA",
+            "version": "580.126.09",
+            "firmware": "9A.0B.0F.00.1D",
+            "serial": null,
+            "bus_address": "pci@000f:01:00.0",
+            "uuid": "GPU-4a48f16e-3f02-784f-f877-7f08b96254a7",
+            "memory_bytes": null,
+            "memory_human_val": null,
+            "memory_human_unit": null
+        }
+    ],
+    "network": [
+        {
+            "model": "Realtek Semiconductor Co., Ltd.",
+            "vendor": "Realtek Semiconductor Co., Ltd.",
+            "version": "05",
+            "firmware": "",
+            "interfaces": [
+                {
+                    "mac": "4c:bb:47:2f:54:48",
+                    "dev_name": "enP7s7",
+                    "bus_address": "pci@0007:01:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 1,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "10baseT/Half",
+                            "10baseT/Full",
+                            "100baseT/Half",
+                            "100baseT/Full",
+                            "1000baseT/Full",
+                            "2500baseT/Full",
+                            "5000baseT/Full",
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                }
+            ],
+            "bus_address": "pci@0007:01:00.0"
+        },
+        {
+            "model": "MEDIATEK Corp.",
+            "vendor": "MEDIATEK Corp.",
+            "version": "00",
+            "firmware": "____000000-20250721232943",
+            "interfaces": [
+                {
+                    "mac": "f8:3d:c6:6d:08:24",
+                    "dev_name": "wlP9s9",
+                    "bus_address": "pci@0009:01:00.0",
+                    "current_configuration": {
+                        "link_detected": false,
+                        "link_speed_val": null,
+                        "link_speed_unit": null,
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [],
+                        "transceiver_medium": "Wireless",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                }
+            ],
+            "bus_address": "pci@0009:01:00.0"
+        }
+    ]
+}

@@ -1,0 +1,2249 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.2/context",
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-6328-1047"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5378-3905"
+        }
+      ],
+      "conformsTo": {
+        "@id": "https://tumi8.github.io/rise-ro-crate-profile/1.0.0/"
+      },
+      "contributor": [
+        {
+          "@id": "https://credit.niso.org/contributor-roles/investigation/"
+        },
+        {
+          "@id": "https://credit.niso.org/contributor-roles/project-administration/"
+        }
+      ],
+      "dateCreated": "2026-06-18T19:12:43.973283",
+      "dateModified": "2026-06-18T20:19:40.719165",
+      "datePublished": "2026-06-18T17:12:43+00:00",
+      "description": "This experiment enriches an existing RO-Crate artifact with generated titles, descriptions, and keywords using locally hosted LLMs through Ollama. Different models and prompt context budgets are combined to evaluate how model choice and available artifact context influence metadata quality. Each run produces an enriched RO-Crate artifact together with run manifests, including token and runtime statistics, GPU and energy measurements, and automated comparisons against a human-written reference using BERTScore metric.",
+      "hasPart": [
+        {
+          "@id": "config/overfit/hardware.json"
+        },
+        {
+          "@id": "config/allocation.json"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.file"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.status"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.status"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.file"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.status"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.status"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.status"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.status"
+        },
+        {
+          "@id": "files/overfit/2026-06-18_09-02-45_976298_original/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.status"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.status"
+        },
+        {
+          "@id": "files/overfit/2026-06-18_09-02-45_976298_reference/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.status"
+        },
+        {
+          "@id": "config/2026-06-18_19-17-58_687076_variables.json"
+        },
+        {
+          "@id": "files/overfit/enrichment_run00/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run01/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run02/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run03/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run04/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run05/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run06/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run07/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run08/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run09/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run10/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.status"
+        },
+        {
+          "@id": "files/overfit/enrichment_run11/"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.stdout"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.stderr"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.status"
+        },
+        {
+          "@id": "CITATION.cff"
+        }
+      ],
+      "keywords": [
+        "RO-Crate",
+        "Metadata Enrichment",
+        "Large Language Models",
+        "Ollama",
+        "BERTScore"
+      ],
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+      },
+      "mainEntity": {
+        "@id": "config/allocation.json"
+      },
+      "name": "Evaluation of Local LLMs for RO-Crate Metadata Enrichment"
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
+    },
+    {
+      "@id": "https://doi.org/10.1145/3485983.3494841",
+      "@type": "CreativeWork",
+      "alternateName": "pos",
+      "citation": "https://doi.org/10.1145/3485983.3494841",
+      "description": "The pos Framework: A Methodology and Toolchain for Reproducible Network Experiments",
+      "name": "Plain Orchestrating Service",
+      "version": "3.0.0"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/817",
+      "@type": [
+        "WebPage",
+        "Standard"
+      ],
+      "name": "JSON Data Format"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
+      "@type": [
+        "WebPage",
+        "Standard"
+      ],
+      "name": "Acrobat PDF 1.5"
+    },
+    {
+      "@id": "https://tumi8.github.io/rise-ro-crate-profile/1.0.0/",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "alternateName": "RISE RO-Crate Profile",
+      "name": "Research Infrastructure Shareable Experiments RO-Crate Profile",
+      "version": "1.0.0"
+    },
+    {
+      "@id": "https://ror.org/02kkvpp62",
+      "@type": "Organization",
+      "location": "Munich, Germany",
+      "name": "Technical University of Munich",
+      "url": "https://www.tum.de"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6328-1047",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "https://ror.org/02kkvpp62"
+      },
+      "alternateName": "warmuth",
+      "familyName": "Warmuth",
+      "givenName": "Kilian",
+      "name": "Kilian Warmuth"
+    },
+    {
+      "@id": "https://credit.niso.org/contributor-roles/investigation/",
+      "@type": "Role",
+      "contributor": [
+        {
+          "@id": "https://orcid.org/0000-0001-6328-1047"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5378-3905"
+        }
+      ],
+      "description": "Conducting a research and investigation process, specifically performing the experiments, or data/evidence collection.",
+      "roleName": "Investigation",
+      "url": "https://credit.niso.org/contributor-roles/investigation/"
+    },
+    {
+      "@id": "config/overfit/hardware.json",
+      "@type": "File",
+      "contentSize": "134",
+      "dateCreated": "2026-06-18T19:12:44.627916",
+      "dateModified": "2026-06-18T19:12:44.627916",
+      "description": "Hardware metadata for testbed node overfit.",
+      "encodingFormat": {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/817"
+      },
+      "name": "Hardware of testbed node overfit"
+    },
+    {
+      "@id": "config/allocation.json",
+      "@type": "Experiment",
+      "dateCreated": "2026-06-18T19:12:43.964888",
+      "dateModified": "2026-06-18T20:19:30.331559",
+      "encodingFormat": "application/json",
+      "executedCommands": [
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.file"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.file"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.command"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+        }
+      ],
+      "experimentController": [
+        {
+          "@id": "https://doi.org/10.1145/3485983.3494841"
+        }
+      ],
+      "experimentNodes": [
+        {
+          "@id": "overfit.ai.net.cit.tum.de"
+        }
+      ],
+      "includedOSImages": [
+        {
+          "@id": "default/ubuntu-noble-dgx-cuda-toolkit"
+        }
+      ],
+      "name": "warmuth_260618_191243_964731",
+      "resultData": [
+        {
+          "@id": "files/overfit/2026-06-18_09-02-45_976298_original/"
+        },
+        {
+          "@id": "files/overfit/2026-06-18_09-02-45_976298_reference/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run00/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run01/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run02/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run03/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run04/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run05/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run06/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run07/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run08/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run09/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run10/"
+        },
+        {
+          "@id": "files/overfit/enrichment_run11/"
+        }
+      ]
+    },
+    {
+      "@id": "overfit.ai.net.cit.tum.de",
+      "@type": "ExperimentNode",
+      "description": "This entity describes testbed node overfit.",
+      "hardware": {
+        "@id": "config/overfit/hardware.json"
+      },
+      "name": "overfit"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.file",
+      "@type": "CommandFileBootstrap",
+      "contentSize": "10561",
+      "dateCreated": "2026-06-18T19:14:47.981995",
+      "dateModified": "2026-06-18T19:14:50.598639",
+      "description": "Script executed to set up the environment and install pos tools on node overfit",
+      "duration": "PT2S",
+      "endTime": "2026-06-18T19:14:50.591661",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "script",
+        "bootstrap"
+      ],
+      "name": "bootstrap",
+      "startTime": "2026-06-18T19:14:47.981995",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.stdout",
+      "@type": "File",
+      "contentSize": "10786",
+      "dateCreated": "2026-06-18T19:14:47.981995",
+      "dateModified": "2026-06-18T19:14:47.981995",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.file"
+      },
+      "name": "bootstrap"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.stderr",
+      "@type": "File",
+      "contentSize": "1707",
+      "dateCreated": "2026-06-18T19:14:47.981995",
+      "dateModified": "2026-06-18T19:14:47.981995",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.file"
+      },
+      "name": "bootstrap"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:14:47.981995",
+      "dateModified": "2026-06-18T19:14:47.981995",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-14-47_981969_bootstrap.file"
+      },
+      "name": "bootstrap"
+    },
+    {
+      "@id": "default/ubuntu-noble-dgx-cuda-toolkit",
+      "@type": "OSImage",
+      "description": "This image was generated automatically by mandelstamm on 2026-04-16T12:37:20+00:00 using the modules/ubuntu-noble-dgx-cuda-toolkit.sh module. Please see the GitLab project for more information: https://gitlab.lrz.de/I8-testbeds/mandelstamm/",
+      "fileSize": "6785335296",
+      "name": "ubuntu-noble-dgx-cuda-toolkit"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.command",
+      "@type": "CommandFileReset",
+      "bootParameters": [
+        "iommu=pt"
+      ],
+      "bootedImage": {
+        "@id": "default/ubuntu-noble-dgx-cuda-toolkit"
+      },
+      "contentSize": "624",
+      "dateCreated": "2026-06-18T19:12:45.292080",
+      "dateModified": "2026-06-18T19:14:54.014181",
+      "description": "Node reset to boot the specified live image and restore a clean system state.",
+      "duration": "PT128S",
+      "endTime": "2026-06-18T19:14:53.976455",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "reset"
+      ],
+      "name": "reset",
+      "startTime": "2026-06-18T19:12:45.292248",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:12:45.292080",
+      "dateModified": "2026-06-18T19:12:45.292080",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.command"
+      },
+      "name": "reset"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:12:45.292080",
+      "dateModified": "2026-06-18T19:12:45.292080",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.command"
+      },
+      "name": "reset"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:12:45.292080",
+      "dateModified": "2026-06-18T19:12:45.292080",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-12-45_292080_reset.command"
+      },
+      "name": "reset"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.file",
+      "@type": "CommandFile",
+      "contentSize": "2416",
+      "dateCreated": "2026-06-18T19:14:54.333362",
+      "dateModified": "2026-06-18T19:17:26.315578",
+      "duration": "PT151S",
+      "endTime": "2026-06-18T19:17:26.276672",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "script"
+      ],
+      "name": "setup_enrich-metadata",
+      "startTime": "2026-06-18T19:14:54.333499",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.stdout",
+      "@type": "File",
+      "contentSize": "33046",
+      "dateCreated": "2026-06-18T19:14:54.333362",
+      "dateModified": "2026-06-18T19:14:54.333362",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.file"
+      },
+      "name": "setup_enrich-metadata"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.stderr",
+      "@type": "File",
+      "contentSize": "11595",
+      "dateCreated": "2026-06-18T19:14:54.333362",
+      "dateModified": "2026-06-18T19:14:54.333362",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.file"
+      },
+      "name": "setup_enrich-metadata"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:14:54.333362",
+      "dateModified": "2026-06-18T19:14:54.333362",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-14-54_333362_setup_enrich-metadata.file"
+      },
+      "name": "setup_enrich-metadata"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.command",
+      "@type": "CommandFileCopy",
+      "contentSize": "106",
+      "dateCreated": "2026-06-18T19:17:26.639523",
+      "dateModified": "2026-06-18T19:17:34.727677",
+      "description": "Recursive folder copy from /home/warmuth/experiments/ai-metadata-enricher to /root/ai-metadata-enricher on node overfit.",
+      "destinationPath": "/root/ai-metadata-enricher",
+      "duration": "PT8S",
+      "endTime": "2026-06-18T19:17:34.697402",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "copy"
+      ],
+      "name": "copy_files",
+      "recursiveCopy": true,
+      "sourcePath": "/home/warmuth/experiments/ai-metadata-enricher",
+      "startTime": "2026-06-18T19:17:26.639700",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:17:26.639523",
+      "dateModified": "2026-06-18T19:17:26.639523",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.command"
+      },
+      "name": "copy_ai-metadata-enricher"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:17:26.639523",
+      "dateModified": "2026-06-18T19:17:26.639523",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.command"
+      },
+      "name": "copy_ai-metadata-enricher"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:26.639523",
+      "dateModified": "2026-06-18T19:17:26.639523",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-26_639523_copy_ai-metadata-enricher.command"
+      },
+      "name": "copy_ai-metadata-enricher"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.command",
+      "@type": "CommandFile",
+      "contentSize": "140",
+      "dateCreated": "2026-06-18T19:17:35.065264",
+      "dateModified": "2026-06-18T19:17:38.173810",
+      "duration": "PT3S",
+      "endTime": "2026-06-18T19:17:38.155482",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command"
+      ],
+      "name": "prepare_ro-crate-target",
+      "startTime": "2026-06-18T19:17:35.065437",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.stdout",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T19:17:35.065264",
+      "dateModified": "2026-06-18T19:17:35.065264",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.command"
+      },
+      "name": "prepare_ro-crate-target"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.stderr",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T19:17:35.065264",
+      "dateModified": "2026-06-18T19:17:35.065264",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.command"
+      },
+      "name": "prepare_ro-crate-target"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:35.065264",
+      "dateModified": "2026-06-18T19:17:35.065264",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-35_065264_prepare_ro-crate-target.command"
+      },
+      "name": "prepare_ro-crate-target"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.command",
+      "@type": "CommandFileCopy",
+      "contentSize": "160",
+      "dateCreated": "2026-06-18T19:17:38.497766",
+      "dateModified": "2026-06-18T19:17:43.753113",
+      "description": "Recursive folder copy from /srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/quic/2026-06-18_09-02-45_976298 to /srv/testbed/results/warmuth/default on node overfit.",
+      "destinationPath": "/srv/testbed/results/warmuth/default",
+      "duration": "PT5S",
+      "endTime": "2026-06-18T19:17:43.719678",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "copy"
+      ],
+      "name": "copy_result_folder",
+      "recursiveCopy": true,
+      "sourcePath": "/srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/quic/2026-06-18_09-02-45_976298",
+      "startTime": "2026-06-18T19:17:38.497943",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:17:38.497766",
+      "dateModified": "2026-06-18T19:17:38.497766",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.command"
+      },
+      "name": "copy_2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:17:38.497766",
+      "dateModified": "2026-06-18T19:17:38.497766",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.command"
+      },
+      "name": "copy_2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:38.497766",
+      "dateModified": "2026-06-18T19:17:38.497766",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-38_497766_copy_2026-06-18_09-02-45_976298.command"
+      },
+      "name": "copy_2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "files/overfit/2026-06-18_09-02-45_976298_original/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:17:48.447557",
+      "dateModified": "2026-06-18T19:17:48.449035",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.command"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "2026-06-18_09-02-45_976298_original",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/original/#/open/2026-06-18_09-02-45_976298_original"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.command",
+      "@type": "CommandFile",
+      "contentSize": "165",
+      "dateCreated": "2026-06-18T19:17:44.090781",
+      "dateModified": "2026-06-18T19:17:48.611610",
+      "duration": "PT4S",
+      "endTime": "2026-06-18T19:17:48.596288",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command"
+      ],
+      "name": "upload_original_ro_crate",
+      "resultData": [
+        {
+          "@id": "files/overfit/2026-06-18_09-02-45_976298_original/"
+        }
+      ],
+      "startTime": "2026-06-18T19:17:44.090931",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.stdout",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T19:17:44.090781",
+      "dateModified": "2026-06-18T19:17:44.090781",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.command"
+      },
+      "name": "upload_original_ro_crate"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.stderr",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T19:17:44.090781",
+      "dateModified": "2026-06-18T19:17:44.090781",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.command"
+      },
+      "name": "upload_original_ro_crate"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:44.090781",
+      "dateModified": "2026-06-18T19:17:44.090781",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-44_090781_upload_original_ro_crate.command"
+      },
+      "name": "upload_original_ro_crate"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.command",
+      "@type": "CommandFileCopy",
+      "contentSize": "170",
+      "dateCreated": "2026-06-18T19:17:49.049695",
+      "dateModified": "2026-06-18T19:17:53.412105",
+      "description": "Recursive folder copy from /srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/quic/2026-06-18_09-02-45_976298_reference to /srv/testbed/results/warmuth/default on node overfit.",
+      "destinationPath": "/srv/testbed/results/warmuth/default",
+      "duration": "PT4S",
+      "endTime": "2026-06-18T19:17:53.385169",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "copy"
+      ],
+      "name": "copy_reference_folder",
+      "recursiveCopy": true,
+      "sourcePath": "/srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/quic/2026-06-18_09-02-45_976298_reference",
+      "startTime": "2026-06-18T19:17:49.049885",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:17:49.049695",
+      "dateModified": "2026-06-18T19:17:49.049695",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.command"
+      },
+      "name": "copy_2026-06-18_09-02-45_976298_reference"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T19:17:49.049695",
+      "dateModified": "2026-06-18T19:17:49.049695",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.command"
+      },
+      "name": "copy_2026-06-18_09-02-45_976298_reference"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:49.049695",
+      "dateModified": "2026-06-18T19:17:49.049695",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-49_049695_copy_2026-06-18_09-02-45_976298_reference.command"
+      },
+      "name": "copy_2026-06-18_09-02-45_976298_reference"
+    },
+    {
+      "@id": "files/overfit/2026-06-18_09-02-45_976298_reference/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:17:57.944681",
+      "dateModified": "2026-06-18T19:17:57.945703",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.command"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "2026-06-18_09-02-45_976298_reference",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/reference/#/open/2026-06-18_09-02-45_976298_reference"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.command",
+      "@type": "CommandFile",
+      "contentSize": "176",
+      "dateCreated": "2026-06-18T19:17:53.836793",
+      "dateModified": "2026-06-18T19:17:58.184640",
+      "duration": "PT4S",
+      "endTime": "2026-06-18T19:17:58.171594",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command"
+      ],
+      "name": "upload_reference_ro_crate",
+      "resultData": [
+        {
+          "@id": "files/overfit/2026-06-18_09-02-45_976298_reference/"
+        }
+      ],
+      "startTime": "2026-06-18T19:17:53.836917",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.stdout"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.stdout",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T19:17:53.836793",
+      "dateModified": "2026-06-18T19:17:53.836793",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.command"
+      },
+      "name": "upload_reference_ro_crate"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.stderr",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T19:17:53.836793",
+      "dateModified": "2026-06-18T19:17:53.836793",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.command"
+      },
+      "name": "upload_reference_ro_crate"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:53.836793",
+      "dateModified": "2026-06-18T19:17:53.836793",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-53_836793_upload_reference_ro_crate.command"
+      },
+      "name": "upload_reference_ro_crate"
+    },
+    {
+      "@id": "config/2026-06-18_19-17-58_687076_variables.json",
+      "@type": "File",
+      "contentSize": "894",
+      "dateCreated": "2026-06-18T19:17:58.687076",
+      "dateModified": "2026-06-18T19:17:58.687076",
+      "description": "Variable set metadata for the allocation at 2026-06-18_19-17-58_687076.",
+      "encodingFormat": {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/817"
+      },
+      "keywords": [
+        "variables"
+      ],
+      "name": "VariableSet"
+    },
+    {
+      "@id": "files/overfit/enrichment_run00/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:21:53.645762",
+      "dateModified": "2026-06-18T19:21:53.648124",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run00",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run00/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file",
+      "@type": "CommandFileLooped",
+      "contentSize": "12506",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T20:19:31.764689",
+      "duration": "PT3692S",
+      "endTime": "2026-06-18T20:19:31.747128",
+      "executedOn": {
+        "@id": "overfit.ai.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "script",
+        "looped"
+      ],
+      "loopRuns": [
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.loop"
+        },
+        {
+          "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.loop"
+        }
+      ],
+      "name": "experiment_enrich-metadata",
+      "startTime": "2026-06-18T19:17:59.221076",
+      "variableSet": {
+        "@id": "config/2026-06-18_19-17-58_687076_variables.json"
+      }
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.loop",
+      "@type": "LoopRun",
+      "contentSize": "412",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:21:54.045467",
+      "duration": "PT234S",
+      "endTime": "2026-06-18T19:21:53.998791",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run00",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run00/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:17:59.221076",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run00/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.stdout",
+      "@type": "File",
+      "contentSize": "112573",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.loop"
+      },
+      "name": "experiment_enrich-metadata_run00"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.loop"
+      },
+      "name": "experiment_enrich-metadata_run00"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run00.loop"
+      },
+      "name": "experiment_enrich-metadata_run00"
+    },
+    {
+      "@id": "files/overfit/enrichment_run01/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:24:15.087303",
+      "dateModified": "2026-06-18T19:24:15.088572",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run01",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run01/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.loop",
+      "@type": "LoopRun",
+      "contentSize": "413",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:24:15.581977",
+      "duration": "PT141S",
+      "endTime": "2026-06-18T19:24:15.533830",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run01",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run01/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:21:53.998791",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run01/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.stdout",
+      "@type": "File",
+      "contentSize": "104630",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.loop"
+      },
+      "name": "experiment_enrich-metadata_run01"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.loop"
+      },
+      "name": "experiment_enrich-metadata_run01"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run01.loop"
+      },
+      "name": "experiment_enrich-metadata_run01"
+    },
+    {
+      "@id": "files/overfit/enrichment_run02/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:34:30.147171",
+      "dateModified": "2026-06-18T19:34:30.148497",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run02",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run02/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.loop",
+      "@type": "LoopRun",
+      "contentSize": "412",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:34:30.740670",
+      "duration": "PT615S",
+      "endTime": "2026-06-18T19:34:30.688453",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run02",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run02/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:24:15.533830",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run02/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.stdout",
+      "@type": "File",
+      "contentSize": "104685",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.loop"
+      },
+      "name": "experiment_enrich-metadata_run02"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.loop"
+      },
+      "name": "experiment_enrich-metadata_run02"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run02.loop"
+      },
+      "name": "experiment_enrich-metadata_run02"
+    },
+    {
+      "@id": "files/overfit/enrichment_run03/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:42:23.531680",
+      "dateModified": "2026-06-18T19:42:23.534871",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run03",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run03/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.loop",
+      "@type": "LoopRun",
+      "contentSize": "417",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:42:24.214076",
+      "duration": "PT473S",
+      "endTime": "2026-06-18T19:42:24.178125",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run03",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run03/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:34:30.688453",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run03/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.stdout",
+      "@type": "File",
+      "contentSize": "104855",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.loop"
+      },
+      "name": "experiment_enrich-metadata_run03"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.loop"
+      },
+      "name": "experiment_enrich-metadata_run03"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run03.loop"
+      },
+      "name": "experiment_enrich-metadata_run03"
+    },
+    {
+      "@id": "files/overfit/enrichment_run04/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:45:11.339251",
+      "dateModified": "2026-06-18T19:45:11.341675",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run04",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run04/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.loop",
+      "@type": "LoopRun",
+      "contentSize": "414",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:45:12.103380",
+      "duration": "PT167S",
+      "endTime": "2026-06-18T19:45:12.072099",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run04",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run04/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:42:24.178125",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run04/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.stdout",
+      "@type": "File",
+      "contentSize": "104675",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.loop"
+      },
+      "name": "experiment_enrich-metadata_run04"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.loop"
+      },
+      "name": "experiment_enrich-metadata_run04"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run04.loop"
+      },
+      "name": "experiment_enrich-metadata_run04"
+    },
+    {
+      "@id": "files/overfit/enrichment_run05/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:50:16.616616",
+      "dateModified": "2026-06-18T19:50:16.618445",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run05",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run05/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.loop",
+      "@type": "LoopRun",
+      "contentSize": "415",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:50:17.531111",
+      "duration": "PT305S",
+      "endTime": "2026-06-18T19:50:17.491345",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run05",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run05/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:45:12.072099",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run05/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.stdout",
+      "@type": "File",
+      "contentSize": "104712",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.loop"
+      },
+      "name": "experiment_enrich-metadata_run05"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.loop"
+      },
+      "name": "experiment_enrich-metadata_run05"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run05.loop"
+      },
+      "name": "experiment_enrich-metadata_run05"
+    },
+    {
+      "@id": "files/overfit/enrichment_run06/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:51:54.523788",
+      "dateModified": "2026-06-18T19:51:54.525748",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run06",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run06/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.loop",
+      "@type": "LoopRun",
+      "contentSize": "414",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:51:55.500656",
+      "duration": "PT97S",
+      "endTime": "2026-06-18T19:51:55.455183",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run06",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run06/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:50:17.491345",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run06/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.stdout",
+      "@type": "File",
+      "contentSize": "104594",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.loop"
+      },
+      "name": "experiment_enrich-metadata_run06"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.loop"
+      },
+      "name": "experiment_enrich-metadata_run06"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run06.loop"
+      },
+      "name": "experiment_enrich-metadata_run06"
+    },
+    {
+      "@id": "files/overfit/enrichment_run07/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:54:21.221645",
+      "dateModified": "2026-06-18T19:54:21.223700",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run07",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run07/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.loop",
+      "@type": "LoopRun",
+      "contentSize": "415",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:54:22.296489",
+      "duration": "PT146S",
+      "endTime": "2026-06-18T19:54:22.248624",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run07",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run07/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:51:55.455183",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run07/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.stdout",
+      "@type": "File",
+      "contentSize": "104632",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.loop"
+      },
+      "name": "experiment_enrich-metadata_run07"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.loop"
+      },
+      "name": "experiment_enrich-metadata_run07"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run07.loop"
+      },
+      "name": "experiment_enrich-metadata_run07"
+    },
+    {
+      "@id": "files/overfit/enrichment_run08/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T20:04:03.084026",
+      "dateModified": "2026-06-18T20:04:03.086179",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run08",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run08/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.loop",
+      "@type": "LoopRun",
+      "contentSize": "414",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T20:04:04.317900",
+      "duration": "PT582S",
+      "endTime": "2026-06-18T20:04:04.262381",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run08",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run08/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:54:22.248624",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run08/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.stdout",
+      "@type": "File",
+      "contentSize": "104689",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.loop"
+      },
+      "name": "experiment_enrich-metadata_run08"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.loop"
+      },
+      "name": "experiment_enrich-metadata_run08"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run08.loop"
+      },
+      "name": "experiment_enrich-metadata_run08"
+    },
+    {
+      "@id": "files/overfit/enrichment_run09/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T20:12:14.967592",
+      "dateModified": "2026-06-18T20:12:14.969871",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run09",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run09/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.loop",
+      "@type": "LoopRun",
+      "contentSize": "419",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T20:12:16.239283",
+      "duration": "PT491S",
+      "endTime": "2026-06-18T20:12:16.180854",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run09",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run09/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T20:04:04.262381",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run09/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.stdout",
+      "@type": "File",
+      "contentSize": "104864",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.loop"
+      },
+      "name": "experiment_enrich-metadata_run09"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.loop"
+      },
+      "name": "experiment_enrich-metadata_run09"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run09.loop"
+      },
+      "name": "experiment_enrich-metadata_run09"
+    },
+    {
+      "@id": "files/overfit/enrichment_run10/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T20:14:26.979648",
+      "dateModified": "2026-06-18T20:14:26.982051",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run10",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run10/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.loop",
+      "@type": "LoopRun",
+      "contentSize": "416",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T20:14:28.345965",
+      "duration": "PT132S",
+      "endTime": "2026-06-18T20:14:28.293583",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run10",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run10/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T20:12:16.180854",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run10/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.stdout",
+      "@type": "File",
+      "contentSize": "104676",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.loop"
+      },
+      "name": "experiment_enrich-metadata_run10"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.loop"
+      },
+      "name": "experiment_enrich-metadata_run10"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run10.loop"
+      },
+      "name": "experiment_enrich-metadata_run10"
+    },
+    {
+      "@id": "files/overfit/enrichment_run11/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T20:19:30.328906",
+      "dateModified": "2026-06-18T20:19:30.331379",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run11",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run11/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.loop",
+      "@type": "LoopRun",
+      "contentSize": "417",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T20:19:31.772951",
+      "duration": "PT303S",
+      "endTime": "2026-06-18T20:19:31.747128",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run11",
+      "resultData": [
+        {
+          "@id": "files/overfit/enrichment_run11/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T20:14:28.293583",
+      "status": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.status"
+      },
+      "stderr": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run11/#/open/2026-06-18_09-02-45_976298"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.stdout",
+      "@type": "File",
+      "contentSize": "104715",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.loop"
+      },
+      "name": "experiment_enrich-metadata_run11"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.stderr",
+      "@type": "File",
+      "contentSize": "519",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.loop"
+      },
+      "name": "experiment_enrich-metadata_run11"
+    },
+    {
+      "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T19:17:59.218924",
+      "dateModified": "2026-06-18T19:17:59.218924",
+      "exampleOfWork": {
+        "@id": "scripts/overfit/2026-06-18_19-17-59_218924_experiment_enrich-metadata_run11.loop"
+      },
+      "name": "experiment_enrich-metadata_run11"
+    },
+    {
+      "@id": "CITATION.cff",
+      "@type": "File",
+      "contentSize": "909",
+      "dateCreated": "2026-06-18T20:19:40.717686",
+      "dateModified": "2026-06-18T20:19:40.717686",
+      "description": "Citation metadata for this RO-Crate. See: https://citation-file-format.github.io/",
+      "name": "Citation metadata file"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5378-3905",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "https://ror.org/02kkvpp62"
+      },
+      "alternateName": "erhauser",
+      "familyName": "Hauser",
+      "givenName": "Eric",
+      "name": "Eric Hauser"
+    },
+    {
+      "@id": "https://credit.niso.org/contributor-roles/project-administration/",
+      "@type": "Role",
+      "contributor": [
+        {
+          "@id": "https://orcid.org/0000-0001-6328-1047"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5378-3905"
+        }
+      ],
+      "description": "Management and coordination responsibility for the research activity planning and execution.",
+      "roleName": "Project administration",
+      "url": "https://credit.niso.org/contributor-roles/project-administration/"
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by-sa/4.0/legalcode",
+      "@type": "CreativeWork",
+      "alternateName": "CC-BY-SA-4.0",
+      "name": "Creative Commons Attribution Share Alike 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+    }
+  ]
+}

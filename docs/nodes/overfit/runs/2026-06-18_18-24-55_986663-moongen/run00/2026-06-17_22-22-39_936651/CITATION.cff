@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: LLM Network Latency Measurement Experiment on Digital Front-End Test Platforms
+abstract: This dataset comprises results from an experiment designed to measure network
+  latency using a load generation application within a controlled environment. The
+  methodology involved establishing a DUT and load generator configuration across
+  nodes nida and cesis, utilizing Git repositories for software libraries and applications.
+  Per-run logs captured energy consumption and generated latency histograms, evaluating
+  performance under configurable packet rates and sizes. Synchronization mechanisms
+  ensured consistent execution across multiple iterations of the load generation and
+  L2 forwarder experiments, ultimately providing data for analyzing network behavior
+  characteristics.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- libmoon
+- hugetlbfs
+- latency
+- network traffic
+- Lua
+license: CC-BY-SA-4.0

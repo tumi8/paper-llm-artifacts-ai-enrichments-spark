@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Performance Measurement and Analysis Experiment
+abstract: This dataset contains the outputs from an experiment designed to characterize
+  network performance characteristics across multiple nodes (rapla, tapa, valga).
+  The methodology involved establishing secure remote access via SSH key configuration,
+  followed by dependency installation using Rust tools. Subsequent runs utilized Time-Based
+  Flow Control and Network Emulation to manipulate latency parameters while measuring
+  data transfer rates. Data generation included randomized byte sequences for analysis,
+  alongside client and server processes configured with varying scheduling and QoS
+  settings. The experiment ultimately produced network traffic capture data and visualization
+  outputs, facilitating performance evaluation across the defined infrastructure.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- Quiche
+- TBF
+- SSH
+- Network Emulation
+license: CC-BY-SA-4.0

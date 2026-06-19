@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: MoonGen Setup Scripts for L2 Performance Testing
+abstract: ' This experiment involved setting up two nodes (cesis and nida) with environment
+  scripts and resetting them to a clean state using specified live images. The methodology
+  included preparing the test environment by installing dependencies, cloning repositories,
+  building software, configuring system parameters like hugetlbfs and disabling turbo
+  boost for stable performance. Subsequently, network traffic was generated via MoonGen
+  scripts, which captured timing metrics during L2 forwarding tests. Evaluation focused
+  on measuring packet latency under varying rates and sizes while automatically recording
+  energy consumption to assess efficiency.'
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- L2 Forwarder
+- Latency
+- Energy Consumption
+- Network Traffic
+license: CC-BY-SA-4.0

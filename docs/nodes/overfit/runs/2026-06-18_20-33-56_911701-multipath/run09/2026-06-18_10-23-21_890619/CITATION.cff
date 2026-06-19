@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Experimental Results Dataset for Distributed Network Performance Measurement
+abstract: This dataset contains results from experiments conducted across three nodes
+  measuring performance under various network conditions configured via scripts like
+  topology.file. Logs detailing system operations and energy usage were captured during
+  each run iteration, providing insights into resource consumption and behavior. The
+  measurements focus on data transfer efficiency and reliability metrics influenced
+  by the specified Quality of Service parameters. Data artifacts are structured for
+  analysis and visualization purposes related to these experimental findings.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- Network Topology
+- Energy Consumption
+- Data Transfer
+- Performance Metrics
+- Rust Compiler
+license: CC-BY-SA-4.0

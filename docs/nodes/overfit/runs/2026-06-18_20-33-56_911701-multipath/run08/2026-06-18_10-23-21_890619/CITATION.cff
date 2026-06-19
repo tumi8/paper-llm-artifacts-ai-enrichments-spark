@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network congestion control experiments with QUIC on Rapla, Tapa, and Valga
+  nodes under varying latency and bandwidth conditions
+abstract: This dataset captures network congestion control performance evaluations
+  using QUIC protocol implementations across three distributed nodes. Experiments
+  apply controlled latency, bandwidth constraints, and scheduling policies to assess
+  protocol behavior under simulated network stress. Each node configures dual-interface
+  topologies with traffic shaping, executing 10 iterations per configuration to measure
+  energy consumption, throughput, and latency. Results include per-run logs, network
+  trace captures, and visualization outputs for analyzing algorithm performance under
+  constrained conditions.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- QUIC protocol
+- network congestion control
+- traffic shaping
+- SSH key deployment
+- energy consumption
+license: CC-BY-SA-4.0

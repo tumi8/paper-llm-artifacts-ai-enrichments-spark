@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Protocol Performance Benchmarking Experiment
+abstract: This dataset documents an experiment designed to benchmark the performance
+  of QUIC protocol implementations under varying network conditions. The methodology
+  involved establishing a controlled environment on nodes tartu and tallinn, utilizing
+  automated scripts for system configuration and build processes. Measurements focused
+  on goodput (throughput) and execution time, captured through server and client logs
+  analyzed by a Python evaluation script. The experiment utilized multiple configurations
+  of bandwidth limits and QUIC implementations to assess protocol performance characteristics.
+  Evaluation outputs include aggregated metrics and visualizations generated from
+  the collected data.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- Quiche
+- TQuic
+- Goodput
+- Network Benchmarking
+- Synchronization
+license: CC-BY-SA-4.0

@@ -1,0 +1,153 @@
+{
+  "generated_at_utc": "2026-06-18T19:34:32.255836+00:00",
+  "result_folder": "/tmp/enricher/2026-06-18_10-23-21_890619",
+  "updated_entities": 54,
+  "elapsed_seconds": 106.391723,
+  "parameters": {
+    "model_profile": "gpt_oss_120b",
+    "model_profile_file": "/root/ai-metadata-enricher/config/model_profiles.yml",
+    "model": "gpt-oss:120b",
+    "ctx": 15000,
+    "temperature": 0.0,
+    "top_p": 0.9,
+    "num_predict": null,
+    "think": "low",
+    "peek_chars": 10000,
+    "gpu_metrics_csv": true,
+    "gpu_metrics_interval_ms": 1000,
+    "overwrite": true,
+    "force_title": true,
+    "force_description": true,
+    "force_keywords": true,
+    "seed": 42
+  },
+  "llm_usage_summary": {
+    "calls_total": 26,
+    "calls_with_usage": 26,
+    "prompt_tokens": 23571,
+    "output_tokens": 2915,
+    "prompt_eval_seconds": 11.852294,
+    "eval_seconds": 71.961918,
+    "total_seconds": 106.125707,
+    "load_seconds": 21.265358,
+    "prompt_tokens_per_second": 1988.7289333168294,
+    "output_tokens_per_second": 40.507536222707515,
+    "usage_present": true
+  },
+  "input_stats": {
+    "count": 26,
+    "min_chars": 2008,
+    "max_chars": 11816,
+    "mean_chars": 3688.1,
+    "stddev_chars": 2539.4
+  },
+  "prompt_template_hash": "c86b28be9a4539a8837b4740593c1a395d6d81ea91cb58fd4c9d8cdc7972ab08",
+  "environment": {
+    "ollama_version": "ollama version is 0.30.10",
+    "model_digest": "unknown",
+    "model_details": {
+      "family": "gptoss",
+      "parameter_size": "116.8B",
+      "quantization_level": "MXFP4"
+    },
+    "gpu_info": "NVIDIA GB10, 580.126.20"
+  },
+  "artifact_provenance": {
+    "baseline_path": "/srv/testbed/results/warmuth/default/2026-06-18_10-23-21_890619",
+    "baseline_label": "2026-06-18_10-23-21_890619_original",
+    "working_copy_path": "/tmp/enricher/2026-06-18_10-23-21_890619",
+    "enriched_label": "2026-06-18_10-23-21_890619",
+    "raw_baseline_uploaded_this_run": null,
+    "reference_label": "2026-06-18_10-23-21_890619_reference",
+    "reference_path": "/srv/testbed/results/warmuth/default/2026-06-18_10-23-21_890619_reference"
+  },
+  "gpu_metrics_summary": {
+    "status": "captured",
+    "csv_path": "/tmp/llm-enrichment-gpu-metrics.csv",
+    "interval_ms": 1000,
+    "monitor_returncode": 0,
+    "sample_count": 229,
+    "gpu_device_count": 1,
+    "device_indices": [
+      "0"
+    ],
+    "device_names": [
+      "NVIDIA GB10"
+    ],
+    "gpu_utilization_avg_pct": 32.38,
+    "gpu_utilization_max_pct": 96.0,
+    "memory_utilization_avg_pct": 0.0,
+    "memory_utilization_max_pct": 0.0,
+    "power_draw_avg_watts": 24.758,
+    "power_draw_max_watts": 63.81,
+    "temperature_max_c": 68.0
+  },
+  "evaluation": {
+    "status": "completed",
+    "reason": null,
+    "report_json": "/tmp/enricher/bertscore_results.json",
+    "report_markdown": "/tmp/enricher/bertscore_results.md",
+    "total_references": 109,
+    "matched": 109,
+    "bertscore": {
+      "status": "computed",
+      "model": "microsoft/deberta-large-mnli",
+      "rescale_with_baseline": true,
+      "reason": null,
+      "requested_device": "auto",
+      "actual_device": "cuda",
+      "cpu_fallback_triggered": false,
+      "original_cuda_error": null
+    },
+    "aggregated": {
+      "rouge_l_f1_mean": 0.5662,
+      "rouge_l_f1_stddev": 0.4475,
+      "token_overlap_mean": 0.5467,
+      "token_overlap_stddev": 0.4666,
+      "bertscore_f1_mean": 0.583,
+      "bertscore_f1_stddev": 0.4327,
+      "bertscore_precision_mean": 0.546,
+      "bertscore_recall_mean": 0.6266,
+      "aggregated_by_field": {
+        "description": {
+          "rouge_l_f1_mean": 0.5702,
+          "rouge_l_f1_stddev": 0.4476,
+          "token_overlap_mean": 0.5511,
+          "token_overlap_stddev": 0.4665,
+          "bertscore_f1_mean": 0.5854,
+          "bertscore_f1_stddev": 0.434,
+          "bertscore_precision_mean": 0.5486,
+          "bertscore_recall_mean": 0.6288,
+          "count": 108
+        },
+        "name": {
+          "rouge_l_f1_mean": 0.1333,
+          "rouge_l_f1_stddev": 0.0,
+          "token_overlap_mean": 0.0714,
+          "token_overlap_stddev": 0.0,
+          "bertscore_f1_mean": 0.3254,
+          "bertscore_f1_stddev": 0.0,
+          "bertscore_precision_mean": 0.2617,
+          "bertscore_recall_mean": 0.3918,
+          "count": 1
+        }
+      }
+    },
+    "normalized_aggregated": {
+      "rouge_l_f1_mean": 0.1343,
+      "rouge_l_f1_stddev": 0.0572,
+      "token_overlap_mean": 0.085,
+      "token_overlap_stddev": 0.0435,
+      "bertscore_f1_mean": 0.2021,
+      "bertscore_f1_stddev": 0.0817,
+      "bertscore_precision_mean": 0.1373,
+      "bertscore_recall_mean": 0.2781,
+      "grouping_strategy": "normalized_entity_id+field",
+      "raw_pair_count": 109,
+      "filtered_pair_count": 53,
+      "normalized_group_count": 26,
+      "collapsed_duplicate_pair_count": 27,
+      "filtered_exact_one_count": 56
+    }
+  }
+}

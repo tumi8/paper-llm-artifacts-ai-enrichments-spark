@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>AI Enrichment Pipeline Results</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css"> :root {
+--primary: #2c3e50;
+--accent: #3498db;
+--bg: #ffffff;
+--bg-alt: #f8f9fa;
+--border: #dee2e6;
+--text: #212529;
+--text-muted: #6c757d;
+}
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+line-height: 1.7;
+color: var(--text);
+background: var(--bg);
+max-width: 1040px;
+margin: 0 auto;
+padding: 2.5rem 1.75rem 4rem;
+}
+
+header {
+border-bottom: 3px solid var(--accent);
+padding-bottom: 1rem;
+margin-bottom: 2rem;
+}
+h1 {
+color: var(--primary);
+font-size: 2rem;
+margin-bottom: 0.85rem;
+}
+h2 {
+color: var(--primary);
+font-size: 1.4rem;
+margin-top: 3.75rem;
+margin-bottom: 1.25rem;
+padding-bottom: 0.45rem;
+border-bottom: 1px solid var(--border);
+}
+h3 {
+color: var(--primary);
+font-size: 1.3rem;
+margin-top: 3.5rem;
+margin-bottom: 0.8rem;
+}
+h4 {
+color: var(--primary);
+font-size: 1rem;
+margin-top: 1.5rem;
+margin-bottom: 0.5rem;
+}
+p {
+margin-bottom: 1rem;
+}
+a {
+color: var(--accent);
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+code {
+background: var(--bg-alt);
+padding: 0.15em 0.4em;
+border-radius: 3px;
+font-size: 0.9em;
+}
+hr {
+border: none;
+border-top: 1px solid var(--border);
+margin: 2rem 0;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 2rem;
+font-size: 0.85rem;
+}
+th {
+background: var(--primary);
+color: white;
+text-align: left;
+padding: 0.5rem 0.75rem;
+font-weight: 600;
+}
+td {
+padding: 0.4rem 0.75rem;
+border-bottom: 1px solid var(--border);
+}
+tr:nth-child(even) td {
+background: var(--bg-alt);
+}
+tr:hover td {
+background: #e8f4fd;
+}
+
+ul,
+ol {
+margin-bottom: 0.75rem;
+padding-left: 1.5rem;
+}
+li {
+margin-bottom: 0.35rem;
+}
+
+.downloads {
+background: var(--bg-alt);
+border: 1px solid var(--border);
+border-left: 4px solid var(--accent);
+border-radius: 4px;
+padding: 1rem 1.5rem;
+margin: 2rem 0;
+}
+.downloads h2 {
+border-bottom: none;
+margin-top: 0;
+padding-bottom: 0;
+}
+.downloads ul {
+list-style: none;
+padding-left: 0;
+}
+.downloads li {
+padding: 0.3rem 0;
+}
+.downloads li::before {
+content: "📄 ";
+}
+
+strong {
+font-weight: 600;
+}
+
+.experiment-links {
+display: flex;
+flex-wrap: wrap;
+gap: 1.15rem;
+margin: 1.25rem 0 2.25rem;
+}
+.experiment-links .link-card {
+flex: 1 1 200px;
+display: flex;
+flex-direction: column;
+background: var(--bg-alt);
+border: 1px solid var(--border);
+border-left: 4px solid var(--accent);
+border-radius: 6px;
+padding: 1.05rem 1.2rem 1.15rem;
+min-height: 248px;
+box-shadow: 0 12px 28px rgba(44, 62, 80, 0.06);
+}
+.experiment-links .link-card.link-card--original {
+border-left-color: var(--text-muted);
+}
+.experiment-links .link-card.link-card--reference {
+border-left-color: var(--primary);
+}
+.experiment-links .link-card.link-card--plots {
+border-left-color: #0f766e;
+order: 99;
+}
+.experiment-links .link-card.link-card--plots .link-card__eyebrow {
+color: #0f766e;
+background: rgba(15, 118, 110, 0.12);
+}
+.link-card__content {
+display: flex;
+flex: 1 1 auto;
+flex-direction: column;
+min-height: 10.75rem;
+}
+.link-card strong {
+display: block;
+font-size: 0.98rem;
+line-height: 1.45;
+margin-bottom: 0;
+max-width: 24ch;
+min-height: 4.25rem;
+}
+.link-card__eyebrow {
+display: inline-flex;
+align-self: flex-start;
+align-items: center;
+justify-content: center;
+font-size: 0.72rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: var(--accent);
+background: rgba(52, 152, 219, 0.1);
+border-radius: 999px;
+padding: 0.3rem 0.55rem;
+margin-bottom: 0.8rem;
+min-height: 2.45rem;
+box-sizing: border-box;
+}
+.link-card__eyebrow--stacked {
+display: inline-flex;
+flex-direction: column;
+align-items: center;
+gap: 0.08rem;
+line-height: 1.1;
+min-width: 8.9rem;
+text-align: center;
+white-space: nowrap;
+}
+.link-card__eyebrow-main,
+.link-card__eyebrow-sub {
+display: block;
+}
+.link-card .link-card__desc {
+font-size: 0.84rem;
+color: var(--text-muted);
+margin-top: 0.45rem;
+margin-bottom: 0;
+min-height: 5.7rem;
+}
+.link-card a,
+.link-card__link {
+display: block;
+margin-top: auto;
+padding-top: 0.9rem;
+border-top: 1px solid var(--border);
+font-size: 0.88rem;
+font-weight: 600;
+line-height: 1.5;
+}
+.link-card__link::before {
+content: "↗";
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 1.35rem;
+height: 1.35rem;
+margin-right: 0.5rem;
+border-radius: 999px;
+background: rgba(52, 152, 219, 0.12);
+color: var(--accent);
+font-size: 0.82rem;
+font-weight: 700;
+vertical-align: middle;
+}
+.toc {
+background: var(--bg-alt);
+border: 1px solid var(--border);
+border-radius: 6px;
+padding: 1.1rem 1.25rem 1.2rem;
+margin: 1.75rem 0 3rem;
+box-shadow: 0 12px 28px rgba(44, 62, 80, 0.05);
+}
+.toc__title {
+font-weight: 600;
+color: var(--primary);
+margin-bottom: 0.9rem;
+}
+.toc__grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1rem 2rem;
+}
+.toc__section {
+background: rgba(255, 255, 255, 0.65);
+border: 1px solid var(--border);
+border-radius: 6px;
+padding: 0.9rem 1rem;
+}
+.toc__eyebrow {
+font-size: 0.78rem;
+font-weight: 700;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+color: var(--text-muted);
+margin-bottom: 0.55rem;
+}
+.toc ul {
+margin-bottom: 0;
+padding-left: 1.15rem;
+}
+.experiment-meta {
+color: var(--text-muted);
+margin-bottom: 1rem;
+}
+.experiment-meta code {
+font-size: 0.85rem;
+}
+h3[id^="experiment-"] {
+margin-top: 4rem;
+}
+#combined-comparison {
+margin-top: 4.5rem;
+}
+.combined-plots-callout {
+margin: 1.25rem 0 2rem;
+padding: 1rem 1.15rem 1.15rem;
+background: var(--bg-alt);
+border: 1px solid var(--border);
+border-left: 4px solid #0f766e;
+border-radius: 8px;
+box-shadow: 0 12px 28px rgba(44, 62, 80, 0.05);
+}
+.combined-plots-callout__eyebrow {
+display: inline-block;
+font-size: 0.72rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #0f766e;
+background: rgba(15, 118, 110, 0.12);
+border-radius: 999px;
+padding: 0.3rem 0.55rem;
+margin-bottom: 0.8rem;
+}
+.combined-plots-callout__title {
+font-size: 1rem;
+font-weight: 600;
+color: var(--primary);
+margin-bottom: 0.3rem;
+}
+.combined-plots-callout__desc {
+color: var(--text-muted);
+margin-bottom: 0.9rem;
+}
+.combined-plots-callout__link {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-weight: 600;
+}
+.combined-plots-callout__link::before {
+content: "↗";
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 1.35rem;
+height: 1.35rem;
+border-radius: 999px;
+background: rgba(52, 152, 219, 0.12);
+color: var(--accent);
+font-size: 0.82rem;
+font-weight: 700;
+}
+.plot-page-links {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+margin: 1rem 0 2rem;
+}
+.plot-page-links__item {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.55rem 0.8rem;
+border: 1px solid var(--border);
+border-radius: 999px;
+background: var(--bg-alt);
+font-size: 0.9rem;
+font-weight: 600;
+}
+.plot-page-links__item::before {
+content: "↗";
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 1.15rem;
+height: 1.15rem;
+border-radius: 999px;
+background: rgba(52, 152, 219, 0.12);
+color: var(--accent);
+font-size: 0.78rem;
+font-weight: 700;
+}
+.plot-gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1.25rem;
+margin: 1rem 0 2.5rem;
+}
+.plot-card {
+margin: 0;
+background: var(--bg-alt);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 1rem;
+box-shadow: 0 12px 30px rgba(44, 62, 80, 0.05);
+}
+.plot-card__image {
+display: block;
+margin-bottom: 0.9rem;
+}
+.plot-card__image img {
+display: block;
+width: 100%;
+height: auto;
+border: 1px solid var(--border);
+border-radius: 6px;
+background: #ffffff;
+}
+.plot-card figcaption {
+display: flex;
+flex-direction: column;
+gap: 0.45rem;
+}
+.plot-card__title {
+font-weight: 600;
+color: var(--primary);
+margin-bottom: 0;
+}
+.plot-card__desc {
+color: var(--text-muted);
+margin-bottom: 0;
+}
+.plot-card__filename {
+color: var(--text-muted);
+margin-bottom: 0;
+}
+@media (max-width: 700px) {
+body {
+padding: 1.5rem 1rem 3rem;
+}
+.experiment-links .link-card {
+min-height: unset;
+}
+.link-card__content,
+.link-card strong,
+.link-card .link-card__desc {
+min-height: unset;
+}
+table {
+display: block;
+overflow-x: auto;
+}
+.plot-gallery {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="artifacts-of-nvidia-dgx-spark">Artifacts of NVIDIA DGX
+Spark</h1>
+<p>This landing page provides an overview of the visualization websites
+generated for all AI enrichment demo experiments that were executed on
+this node. It brings together experiment summaries and detailed run
+tables while keeping the individual experiment and run websites directly
+accessible.</p>
+<p>Each experiment section links to the visualization website of the
+enrichment runs, the original experiment website, the reference
+experiment website based on the reference descriptions by the researcher
+who created it, and a plot gallery. The plots show the different
+performance and quality metrics.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<nav class="toc" aria-labelledby="table-of-contents">
+<p class="toc__title">
+Jump to the relevant section
+</p>
+<div class="toc__grid">
+<section class="toc__section" aria-labelledby="toc-overview">
+<p class="toc__eyebrow" id="toc-overview">
+Overview
+</p>
+<ul>
+<li>
+<a href="#how-to-read-this-page">How to Read This Page</a>
+</li>
+<li>
+<a href="#hardware-and-runtime">Hardware and Runtime Information</a>
+</li>
+<li>
+<a href="#combined-comparison">Combined Comparison</a>
+</li>
+</ul>
+</section>
+<section class="toc__section" aria-labelledby="toc-experiments">
+<p class="toc__eyebrow" id="toc-experiments">
+Demo Experiments
+</p>
+<ul>
+<li>
+<a href="#experiment-2026-06-18_18-24-55_986663-moongen">MoonGen Latency
+Test</a>
+</li>
+<li>
+<a href="#experiment-2026-06-18_19-12-43_964731-quic">Quic
+Implementation Benchmark</a>
+</li>
+<li>
+<a href="#experiment-2026-06-18_20-33-56_911701-multipath">Multipath</a>
+</li>
+</ul>
+</section>
+</div>
+</nav>
+<h2 id="how-to-read-this-page">How to Read This Page</h2>
+<ul>
+<li>First, read the description for each experiment to understand what
+it covers.</li>
+<li>Then open the visualization website of original experiment and
+compare it with the visualization website of reference experiment.</li>
+<li>Check the summary metrics for a quick overview of the results.</li>
+<li>For more detail, use the detailed run tables.</li>
+<li>If you want more metrics and charts, open the plot gallery.</li>
+<li>If you want to inspect the actual enrichment runs for this RO-Crate,
+open the visualization website of enrichment runs.</li>
+</ul>
+<h2 id="hardware-and-runtime">Hardware and Runtime Information</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node</td>
+<td>Overfit</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>NVIDIA GB10</td>
+</tr>
+<tr>
+<td>Driver</td>
+<td>580.126.20</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>GB10 Spark CPU @ 3.9GHz</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>128 GiB</td>
+</tr>
+<tr>
+<td>Ollama Version</td>
+<td>0.30.10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="experiments">Experiments</h2>
+<h3 id="experiment-2026-06-18_18-24-55_986663-moongen">MoonGen Latency
+Test</h3>
+<div class="experiment-meta">
+<strong>Experiment identifier:</strong>
+<code>2026-06-18_18-24-55_986663-moongen</code>
+</div>
+<p class="experiment-blurb">
+Measures L2 load latency in a two-node setup by varying packet rates and
+sizes while recording latency and energy consumption.
+</p>
+<p>Use the links below to compare the original experiment website with
+the reference experiment website and explore the website of the
+enrichment runs.</p>
+<div class="experiment-links">
+<div class="link-card">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Enrichment</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of enrichment runs</strong><span class="link-card__desc">Includes the enrichment runs for this experiment
+across all tested models and parameters.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/experiments/2026-06-18_18-24-55_986663-moongen">Visualization
+website of enrichment runs</a>
+</div>
+<div class="link-card link-card--original">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Original</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of original experiment</strong><span class="link-card__desc">Shows the original experiment website without
+additional descriptive text.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/original">Visualization
+website of original experiment</a>
+</div>
+<div class="link-card link-card--reference">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Reference</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of reference experiment</strong><span class="link-card__desc">Shows the reference experiment website with
+researcher-written descriptions.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/reference">Visualization
+website of reference experiment</a>
+</div>
+<div class="link-card link-card--plots">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Plot</span><span class="link-card__eyebrow-sub">Gallery</span></span>
+<div class="link-card__content">
+<strong>Generated metric plots and summary charts</strong><span class="link-card__desc">Browse all published boxplots and combined
+summary charts for this experiment.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/plots/2026-06-18_18-24-55_986663-moongen">Plot
+gallery for this experiment</a>
+</div>
+</div>
+<h4 id="summary-metrics">Summary Metrics</h4>
+<p>This summary table provides the high-level orientation for the demo
+experiment before inspecting individual runs.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark</td>
+<td>MoonGen Latency Test</td>
+</tr>
+<tr>
+<td>Runs</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Models</td>
+<td>6</td>
+</tr>
+<tr>
+<td>peek_chars</td>
+<td>100, 10000</td>
+</tr>
+<tr>
+<td>Prompt Tokens</td>
+<td>171,234</td>
+</tr>
+<tr>
+<td>Output Tokens</td>
+<td>32,111</td>
+</tr>
+<tr>
+<td>Total Tokens</td>
+<td>203,345</td>
+</tr>
+<tr>
+<td>Elapsed (s)</td>
+<td>1184.18</td>
+</tr>
+<tr>
+<td>GPU Energy (Wh)</td>
+<td>16.726</td>
+</tr>
+<tr>
+<td>Mean Normalized BERTScore F1</td>
+<td>0.3109</td>
+</tr>
+<tr>
+<td>Raw Per-Entity BERTScore F1</td>
+<td>0.6088</td>
+</tr>
+<tr>
+<td>Best Normalized BERTScore Run</td>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run04">run04</a>
+(gpt-oss:20b, peek=100, 0.3415)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="detailed-run-comparison">Detailed Run Comparison</h4>
+<p>The detailed run table keeps the full data richness of the landing
+page and can be used to compare models, token output, runtime, and
+energy consumption within this demo experiment.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th>Run ID</th>
+<th>Model</th>
+<th>peek_chars</th>
+<th>Normalized BERTScore F1</th>
+<th>Raw BERTScore F1</th>
+<th>Elapsed (s)</th>
+<th>Output Tokens</th>
+<th>Output tok/s</th>
+<th>Energy (Wh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run00">run00</a></td>
+<td>gemma3:4b</td>
+<td>100</td>
+<td>0.3162</td>
+<td>0.6189</td>
+<td>61.57</td>
+<td>609</td>
+<td>64.54</td>
+<td>0.496</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run01">run01</a></td>
+<td>gemma3:12b</td>
+<td>100</td>
+<td>0.2934</td>
+<td>0.5957</td>
+<td>40.39</td>
+<td>521</td>
+<td>26.08</td>
+<td>0.483</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run02">run02</a></td>
+<td>qwen3:14b</td>
+<td>100</td>
+<td>0.3164</td>
+<td>0.6197</td>
+<td>190.44</td>
+<td>4,242</td>
+<td>23.64</td>
+<td>2.874</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run03">run03</a></td>
+<td>deepseek-r1:8b</td>
+<td>100</td>
+<td>0.2876</td>
+<td>0.6019</td>
+<td>206.30</td>
+<td>7,555</td>
+<td>40.24</td>
+<td>2.910</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run04">run04</a></td>
+<td>gpt-oss:20b</td>
+<td>100</td>
+<td>0.3415</td>
+<td>0.6204</td>
+<td>37.48</td>
+<td>1,463</td>
+<td>57.25</td>
+<td>0.552</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run05">run05</a></td>
+<td>gpt-oss:120b</td>
+<td>100</td>
+<td>0.3175</td>
+<td>0.6032</td>
+<td>56.27</td>
+<td>1,651</td>
+<td>40.64</td>
+<td>1.022</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run06">run06</a></td>
+<td>gemma3:4b</td>
+<td>10000</td>
+<td>0.3073</td>
+<td>0.6101</td>
+<td>26.89</td>
+<td>629</td>
+<td>63.14</td>
+<td>0.291</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run07">run07</a></td>
+<td>gemma3:12b</td>
+<td>10000</td>
+<td>0.2930</td>
+<td>0.5954</td>
+<td>45.50</td>
+<td>520</td>
+<td>25.61</td>
+<td>0.610</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run08">run08</a></td>
+<td>qwen3:14b</td>
+<td>10000</td>
+<td>0.3169</td>
+<td>0.6202</td>
+<td>213.67</td>
+<td>4,296</td>
+<td>21.82</td>
+<td>3.000</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run09">run09</a></td>
+<td>deepseek-r1:8b</td>
+<td>10000</td>
+<td>0.2796</td>
+<td>0.5940</td>
+<td>210.68</td>
+<td>7,702</td>
+<td>38.91</td>
+<td>3.003</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run10">run10</a></td>
+<td>gpt-oss:20b</td>
+<td>10000</td>
+<td>0.3379</td>
+<td>0.6168</td>
+<td>39.05</td>
+<td>1,412</td>
+<td>56.72</td>
+<td>0.462</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run11">run11</a></td>
+<td>gpt-oss:120b</td>
+<td>10000</td>
+<td>0.3236</td>
+<td>0.6092</td>
+<td>55.94</td>
+<td>1,511</td>
+<td>40.03</td>
+<td>1.021</td>
+</tr>
+</tbody>
+</table>
+<h3 id="experiment-2026-06-18_19-12-43_964731-quic">Quic Implementation
+Benchmark</h3>
+<div class="experiment-meta">
+<strong>Experiment identifier:</strong>
+<code>2026-06-18_19-12-43_964731-quic</code>
+</div>
+<p class="experiment-blurb">
+Evaluates performance of different QUIC implementations by running
+repeated file transfers across varying configurations and comparing
+results.
+</p>
+<p>Use the links below to compare the original experiment website with
+the reference experiment website and explore the website of the
+enrichment runs.</p>
+<div class="experiment-links">
+<div class="link-card">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Enrichment</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of enrichment runs</strong><span class="link-card__desc">Includes the enrichment runs for this experiment
+across all tested models and parameters.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/experiments/2026-06-18_19-12-43_964731-quic">Visualization
+website of enrichment runs</a>
+</div>
+<div class="link-card link-card--original">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Original</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of original experiment</strong><span class="link-card__desc">Shows the original experiment website without
+additional descriptive text.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/original">Visualization
+website of original experiment</a>
+</div>
+<div class="link-card link-card--reference">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Reference</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of reference experiment</strong><span class="link-card__desc">Shows the reference experiment website with
+researcher-written descriptions.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/reference">Visualization
+website of reference experiment</a>
+</div>
+<div class="link-card link-card--plots">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Plot</span><span class="link-card__eyebrow-sub">Gallery</span></span>
+<div class="link-card__content">
+<strong>Generated metric plots and summary charts</strong><span class="link-card__desc">Browse all published boxplots and combined
+summary charts for this experiment.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/plots/2026-06-18_19-12-43_964731-quic">Plot
+gallery for this experiment</a>
+</div>
+</div>
+<h4 id="summary-metrics-1">Summary Metrics</h4>
+<p>This summary table provides the high-level orientation for the demo
+experiment before inspecting individual runs.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark</td>
+<td>Quic Implementation Benchmark</td>
+</tr>
+<tr>
+<td>Runs</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Models</td>
+<td>6</td>
+</tr>
+<tr>
+<td>peek_chars</td>
+<td>100, 10000</td>
+</tr>
+<tr>
+<td>Prompt Tokens</td>
+<td>506,702</td>
+</tr>
+<tr>
+<td>Output Tokens</td>
+<td>69,723</td>
+</tr>
+<tr>
+<td>Total Tokens</td>
+<td>576,425</td>
+</tr>
+<tr>
+<td>Elapsed (s)</td>
+<td>2733.85</td>
+</tr>
+<tr>
+<td>GPU Energy (Wh)</td>
+<td>37.329</td>
+</tr>
+<tr>
+<td>Mean Normalized BERTScore F1</td>
+<td>0.3516</td>
+</tr>
+<tr>
+<td>Raw Per-Entity BERTScore F1</td>
+<td>0.3227</td>
+</tr>
+<tr>
+<td>Best Normalized BERTScore Run</td>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run09">run09</a>
+(deepseek-r1:8b, peek=10000, 0.3758)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="detailed-run-comparison-1">Detailed Run Comparison</h4>
+<p>The detailed run table keeps the full data richness of the landing
+page and can be used to compare models, token output, runtime, and
+energy consumption within this demo experiment.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th>Run ID</th>
+<th>Model</th>
+<th>peek_chars</th>
+<th>Normalized BERTScore F1</th>
+<th>Raw BERTScore F1</th>
+<th>Elapsed (s)</th>
+<th>Output Tokens</th>
+<th>Output tok/s</th>
+<th>Energy (Wh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run00">run00</a></td>
+<td>gemma3:4b</td>
+<td>100</td>
+<td>0.3303</td>
+<td>0.2964</td>
+<td>96.64</td>
+<td>1,035</td>
+<td>63.23</td>
+<td>0.773</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run01">run01</a></td>
+<td>gemma3:12b</td>
+<td>100</td>
+<td>0.3492</td>
+<td>0.3321</td>
+<td>104.86</td>
+<td>983</td>
+<td>25.60</td>
+<td>1.241</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run02">run02</a></td>
+<td>qwen3:14b</td>
+<td>100</td>
+<td>0.3549</td>
+<td>0.3071</td>
+<td>535.07</td>
+<td>11,634</td>
+<td>23.47</td>
+<td>7.885</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run03">run03</a></td>
+<td>deepseek-r1:8b</td>
+<td>100</td>
+<td>0.3749</td>
+<td>0.3349</td>
+<td>406.44</td>
+<td>14,648</td>
+<td>39.67</td>
+<td>5.778</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run04">run04</a></td>
+<td>gpt-oss:20b</td>
+<td>100</td>
+<td>0.3383</td>
+<td>0.3059</td>
+<td>91.74</td>
+<td>2,953</td>
+<td>57.26</td>
+<td>1.099</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run05">run05</a></td>
+<td>gpt-oss:120b</td>
+<td>100</td>
+<td>0.3618</td>
+<td>0.3394</td>
+<td>116.09</td>
+<td>2,762</td>
+<td>40.90</td>
+<td>1.708</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run06">run06</a></td>
+<td>gemma3:4b</td>
+<td>10000</td>
+<td>0.3233</td>
+<td>0.2803</td>
+<td>61.65</td>
+<td>1,096</td>
+<td>62.22</td>
+<td>0.573</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run07">run07</a></td>
+<td>gemma3:12b</td>
+<td>10000</td>
+<td>0.3476</td>
+<td>0.3263</td>
+<td>107.88</td>
+<td>997</td>
+<td>25.16</td>
+<td>1.304</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run08">run08</a></td>
+<td>qwen3:14b</td>
+<td>10000</td>
+<td>0.3505</td>
+<td>0.3182</td>
+<td>540.08</td>
+<td>11,455</td>
+<td>22.71</td>
+<td>7.744</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run09">run09</a></td>
+<td>deepseek-r1:8b</td>
+<td>10000</td>
+<td>0.3758</td>
+<td>0.3137</td>
+<td>453.41</td>
+<td>16,448</td>
+<td>38.65</td>
+<td>6.457</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run10">run10</a></td>
+<td>gpt-oss:20b</td>
+<td>10000</td>
+<td>0.3502</td>
+<td>0.3589</td>
+<td>87.42</td>
+<td>2,903</td>
+<td>56.50</td>
+<td>0.993</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run11">run11</a></td>
+<td>gpt-oss:120b</td>
+<td>10000</td>
+<td>0.3629</td>
+<td>0.3595</td>
+<td>132.57</td>
+<td>2,809</td>
+<td>35.10</td>
+<td>1.775</td>
+</tr>
+</tbody>
+</table>
+<h3 id="experiment-2026-06-18_20-33-56_911701-multipath">Multipath</h3>
+<div class="experiment-meta">
+<strong>Experiment identifier:</strong>
+<code>2026-06-18_20-33-56_911701-multipath</code>
+</div>
+<p class="experiment-blurb">
+Automates deployment and evaluation of a multipath-enabled IPv6 topology
+to study transport protocols using multiple network paths
+simultaneously.
+</p>
+<p>Use the links below to compare the original experiment website with
+the reference experiment website and explore the website of the
+enrichment runs.</p>
+<div class="experiment-links">
+<div class="link-card">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Enrichment</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of enrichment runs</strong><span class="link-card__desc">Includes the enrichment runs for this experiment
+across all tested models and parameters.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/experiments/2026-06-18_20-33-56_911701-multipath">Visualization
+website of enrichment runs</a>
+</div>
+<div class="link-card link-card--original">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Original</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of original experiment</strong><span class="link-card__desc">Shows the original experiment website without
+additional descriptive text.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/original">Visualization
+website of original experiment</a>
+</div>
+<div class="link-card link-card--reference">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Reference</span><span class="link-card__eyebrow-sub">Experiment</span></span>
+<div class="link-card__content">
+<strong>Visualization website of reference experiment</strong><span class="link-card__desc">Shows the reference experiment website with
+researcher-written descriptions.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/reference">Visualization
+website of reference experiment</a>
+</div>
+<div class="link-card link-card--plots">
+<span class="link-card__eyebrow link-card__eyebrow--stacked"><span class="link-card__eyebrow-main">Plot</span><span class="link-card__eyebrow-sub">Gallery</span></span>
+<div class="link-card__content">
+<strong>Generated metric plots and summary charts</strong><span class="link-card__desc">Browse all published boxplots and combined
+summary charts for this experiment.</span>
+</div>
+<a class="link-card__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/plots/2026-06-18_20-33-56_911701-multipath">Plot
+gallery for this experiment</a>
+</div>
+</div>
+<h4 id="summary-metrics-2">Summary Metrics</h4>
+<p>This summary table provides the high-level orientation for the demo
+experiment before inspecting individual runs.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark</td>
+<td>Multipath</td>
+</tr>
+<tr>
+<td>Runs</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Models</td>
+<td>6</td>
+</tr>
+<tr>
+<td>peek_chars</td>
+<td>100, 10000</td>
+</tr>
+<tr>
+<td>Prompt Tokens</td>
+<td>285,984</td>
+</tr>
+<tr>
+<td>Output Tokens</td>
+<td>63,906</td>
+</tr>
+<tr>
+<td>Total Tokens</td>
+<td>349,890</td>
+</tr>
+<tr>
+<td>Elapsed (s)</td>
+<td>2356.69</td>
+</tr>
+<tr>
+<td>GPU Energy (Wh)</td>
+<td>31.839</td>
+</tr>
+<tr>
+<td>Mean Normalized BERTScore F1</td>
+<td>0.1952</td>
+</tr>
+<tr>
+<td>Raw Per-Entity BERTScore F1</td>
+<td>0.5853</td>
+</tr>
+<tr>
+<td>Best Normalized BERTScore Run</td>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run04">run04</a>
+(gpt-oss:20b, peek=100, 0.2149)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="detailed-run-comparison-2">Detailed Run Comparison</h4>
+<p>The detailed run table keeps the full data richness of the landing
+page and can be used to compare models, token output, runtime, and
+energy consumption within this demo experiment.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th>Run ID</th>
+<th>Model</th>
+<th>peek_chars</th>
+<th>Normalized BERTScore F1</th>
+<th>Raw BERTScore F1</th>
+<th>Elapsed (s)</th>
+<th>Output Tokens</th>
+<th>Output tok/s</th>
+<th>Energy (Wh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run00">run00</a></td>
+<td>gemma3:4b</td>
+<td>100</td>
+<td>0.1922</td>
+<td>0.5920</td>
+<td>95.57</td>
+<td>1,563</td>
+<td>64.10</td>
+<td>0.780</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run01">run01</a></td>
+<td>gemma3:12b</td>
+<td>100</td>
+<td>0.1738</td>
+<td>0.5777</td>
+<td>98.90</td>
+<td>1,395</td>
+<td>25.90</td>
+<td>1.157</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run02">run02</a></td>
+<td>qwen3:14b</td>
+<td>100</td>
+<td>0.1757</td>
+<td>0.5750</td>
+<td>475.78</td>
+<td>10,699</td>
+<td>23.60</td>
+<td>7.038</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run03">run03</a></td>
+<td>deepseek-r1:8b</td>
+<td>100</td>
+<td>0.2126</td>
+<td>0.5891</td>
+<td>331.44</td>
+<td>11,792</td>
+<td>40.35</td>
+<td>4.539</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run04">run04</a></td>
+<td>gpt-oss:20b</td>
+<td>100</td>
+<td>0.2149</td>
+<td>0.5952</td>
+<td>89.56</td>
+<td>3,589</td>
+<td>57.09</td>
+<td>1.130</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run05">run05</a></td>
+<td>gpt-oss:120b</td>
+<td>100</td>
+<td>0.2021</td>
+<td>0.5830</td>
+<td>104.72</td>
+<td>2,915</td>
+<td>40.72</td>
+<td>1.556</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run06">run06</a></td>
+<td>gemma3:4b</td>
+<td>10000</td>
+<td>0.1922</td>
+<td>0.5920</td>
+<td>58.48</td>
+<td>1,563</td>
+<td>63.14</td>
+<td>0.530</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run07">run07</a></td>
+<td>gemma3:12b</td>
+<td>10000</td>
+<td>0.1738</td>
+<td>0.5777</td>
+<td>99.85</td>
+<td>1,395</td>
+<td>25.45</td>
+<td>1.171</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run08">run08</a></td>
+<td>qwen3:14b</td>
+<td>10000</td>
+<td>0.1757</td>
+<td>0.5750</td>
+<td>487.97</td>
+<td>10,699</td>
+<td>22.97</td>
+<td>6.911</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run09">run09</a></td>
+<td>deepseek-r1:8b</td>
+<td>10000</td>
+<td>0.2126</td>
+<td>0.5891</td>
+<td>317.49</td>
+<td>11,792</td>
+<td>39.45</td>
+<td>4.418</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run10">run10</a></td>
+<td>gpt-oss:20b</td>
+<td>10000</td>
+<td>0.2149</td>
+<td>0.5952</td>
+<td>90.55</td>
+<td>3,589</td>
+<td>56.43</td>
+<td>1.032</td>
+</tr>
+<tr>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run11">run11</a></td>
+<td>gpt-oss:120b</td>
+<td>10000</td>
+<td>0.2021</td>
+<td>0.5830</td>
+<td>106.39</td>
+<td>2,915</td>
+<td>40.51</td>
+<td>1.575</td>
+</tr>
+</tbody>
+</table>
+<h2 id="combined-comparison">Combined Comparison</h2>
+<p>This section compares the demo experiments against each other and
+then groups the same runs by model profile for a cross-experiment
+view.</p>
+<div class="combined-plots-callout">
+<span class="combined-plots-callout__eyebrow">Combined Plots</span>
+<p class="combined-plots-callout__title">
+Combined plot gallery for this node
+</p>
+<p class="combined-plots-callout__desc">
+Aggregates values across all published experiments and tested models on
+this node.
+</p>
+<p><a class="combined-plots-callout__link" href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/plots/combined">Visualization
+website of the combined plots</a></p>
+</div>
+<h3 id="experiment-comparison">Experiment Comparison</h3>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Identifier</th>
+<th>Runs</th>
+<th>Total Tokens</th>
+<th>Elapsed (s)</th>
+<th>Mean Normalized BERTScore F1</th>
+<th>Mean Raw BERTScore F1</th>
+<th>Best Normalized BERTScore Run</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MoonGen Latency Test</td>
+<td>2026-06-18_18-24-55_986663-moongen</td>
+<td>12</td>
+<td>203,345</td>
+<td>1184.18</td>
+<td>0.3109</td>
+<td>0.6088</td>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_18-24-55_986663-moongen/run04">run04</a>
+(gpt-oss:20b, peek=100, 0.3415)</td>
+</tr>
+<tr>
+<td>Quic Implementation Benchmark</td>
+<td>2026-06-18_19-12-43_964731-quic</td>
+<td>12</td>
+<td>576,425</td>
+<td>2733.85</td>
+<td>0.3516</td>
+<td>0.3227</td>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_19-12-43_964731-quic/run09">run09</a>
+(deepseek-r1:8b, peek=10000, 0.3758)</td>
+</tr>
+<tr>
+<td>Multipath</td>
+<td>2026-06-18_20-33-56_911701-multipath</td>
+<td>12</td>
+<td>349,890</td>
+<td>2356.69</td>
+<td>0.1952</td>
+<td>0.5853</td>
+<td><a href="https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/nodes/overfit/runs/2026-06-18_20-33-56_911701-multipath/run04">run04</a>
+(gpt-oss:20b, peek=100, 0.2149)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="model-comparison">Model Comparison</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>Experiments</th>
+<th>Mean Normalized BERTScore F1</th>
+<th>Mean Raw BERTScore F1</th>
+<th>Mean Elapsed (s)</th>
+<th>Mean Output tok/s</th>
+<th>Mean Energy/run (Wh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deepseek-r1:8b</td>
+<td>MoonGen Latency Test, Multipath, Quic Implementation Benchmark</td>
+<td>0.2905</td>
+<td>0.5038</td>
+<td>320.96</td>
+<td>39.55</td>
+<td>4.518</td>
+</tr>
+<tr>
+<td>gemma3:12b</td>
+<td>MoonGen Latency Test, Multipath, Quic Implementation Benchmark</td>
+<td>0.2718</td>
+<td>0.5008</td>
+<td>82.90</td>
+<td>25.63</td>
+<td>0.994</td>
+</tr>
+<tr>
+<td>gemma3:4b</td>
+<td>MoonGen Latency Test, Multipath, Quic Implementation Benchmark</td>
+<td>0.2769</td>
+<td>0.4983</td>
+<td>66.80</td>
+<td>63.40</td>
+<td>0.574</td>
+</tr>
+<tr>
+<td>gpt-oss:120b</td>
+<td>MoonGen Latency Test, Multipath, Quic Implementation Benchmark</td>
+<td>0.2950</td>
+<td>0.5129</td>
+<td>95.33</td>
+<td>39.65</td>
+<td>1.443</td>
+</tr>
+<tr>
+<td>gpt-oss:20b</td>
+<td>MoonGen Latency Test, Multipath, Quic Implementation Benchmark</td>
+<td>0.2996</td>
+<td>0.5154</td>
+<td>72.63</td>
+<td>56.88</td>
+<td>0.878</td>
+</tr>
+<tr>
+<td>qwen3:14b</td>
+<td>MoonGen Latency Test, Multipath, Quic Implementation Benchmark</td>
+<td>0.2817</td>
+<td>0.5025</td>
+<td>407.17</td>
+<td>23.03</td>
+<td>5.909</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
